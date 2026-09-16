@@ -23,7 +23,35 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 @media(max-width:800px){.hero-signals svg{width:84%;max-height:420px}}
 @media(max-width:460px){.hero-signals svg{width:88%;max-height:360px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-signals{display:none}.signal{animation:none}}
-</style>
+/* Comparison teaching sequence: keep all overrides local to this section. */
+#comparison{scroll-margin-top:145px;padding-block:42px}
+#comparison h2{max-width:none;margin:10px 0 16px;font-size:clamp(32px,3.6vw,50px)}
+#comparison .context-intro{max-width:940px;font-size:21px;line-height:1.45;margin-bottom:18px}
+#comparison .context-route{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:15px;font-weight:800;margin:0 0 20px}
+#comparison .context-route span{color:var(--blue)}
+#comparison .context-unknowns{padding:16px 20px;border-left:5px solid var(--green);background:var(--soft);margin-bottom:24px}
+#comparison .context-unknowns p{margin:0;max-width:1080px;font-size:18px}
+#comparison .context-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+#comparison .context-step{min-width:0;padding:20px;background:var(--panel);border:1px solid var(--line);border-top:4px solid var(--blue);display:flex;flex-direction:column}
+#comparison .context-label{font-size:12px;font-weight:900;letter-spacing:.12em;color:var(--blue);margin-bottom:10px}
+#comparison .context-step h3{font-size:23px;letter-spacing:-.03em;line-height:1.15;margin-bottom:18px}
+#comparison dl{margin:0 0 18px;font-size:16px;line-height:1.45}
+#comparison dt{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+#comparison dd{margin:0 0 16px}
+#comparison dd:last-child{margin-bottom:0}
+#comparison .context-example{border-top:1px solid var(--line);padding-top:14px;margin:auto 0 0;font-size:15px;line-height:1.45}
+#comparison .context-example span{display:block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+#comparison .context-result{background:var(--soft);border-top-color:var(--green)}
+#comparison .context-boundary{font-size:15px;margin:18px 0}
+#comparison .context-details{border-block:1px solid var(--line)}
+#comparison summary{padding:14px 4px;min-height:48px;font-weight:700;cursor:pointer}
+#comparison .context-detail-body{padding:8px 4px 20px;max-width:960px}
+#comparison pre{overflow-wrap:anywhere;min-height:0}
+#comparison .copy{color:var(--ink);border-color:var(--ink)}
+[data-theme=dark] #comparison .context-label,[data-theme=dark] #comparison .stage,[data-theme=dark] #comparison .context-route span{color:var(--green)}
+@media(max-width:1100px){#comparison .context-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#comparison{padding-block:30px}#comparison .context-intro{font-size:18px}#comparison .context-route{gap:6px 10px;font-size:13px}#comparison .context-unknowns{padding:14px 16px}#comparison .context-unknowns p{font-size:16px}#comparison .context-steps{grid-template-columns:1fr}#comparison .context-step{padding:18px}#comparison .context-step h3{margin-bottom:16px}}
+/* End comparison teaching sequence */</style>
 </head>
 <body>
 <header class="top"><div class="brand-lockup"><img class="brand-mark" src="assets/iriri-mark.svg" alt=""><div class="wordmark-lockup"><img class="brand-wordmark" src="assets/iriri-wordmark.svg" alt="IRIRI"><span>Labs</span></div></div><button class="theme" id="theme" type="button">Dark mode</button></header>
@@ -38,7 +66,50 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 <section id="orientation"><div class="stage">Welcome · Anatomy of AI</div><h2>Welcome to Anatomy of AI</h2><p class="boundary"><strong>A familiar comparison, not an equivalence.</strong> This class is not claiming that AI is like humans, conscious, alive, or biologically equivalent. We use the intelligence system as it exists in humans as a familiar comparison point for understanding the operating structure of artificial intelligence.</p><p class="note"><strong>What we will map:</strong> sensing and input, processing and model, context and memory, feedback, outputs and actions, and guardrails. The comparison helps us name system roles and information flow without overclaiming what AI is.</p></section>
 <section id="atlas"><div class="stage">01 · AI foundations</div><h2>AI Foundations using biology illustrations</h2><div class="atlas"><div class="index" id="index" role="tablist" aria-label="AI anatomy concepts"></div><div class="active-concept"><div class="art-field" id="visual"></div><div class="concept-copy"><div class="stage" id="conceptNo"></div><h3 id="conceptName"></h3><div class="mapping" id="mapping"></div><div class="concept-annotations" id="annotations"></div><p id="example"></p><p class="note" id="boundary"></p><p class="question" id="question"></p><div class="flow"><button class="secondary" id="prev" type="button">Previous</button><button class="action" id="next" type="button">Next landmark</button></div></div></div></div></section>
 <section id="exercise" class="challenge"><div class="stage">02 · Foundational concept check</div><h2>Exercise that tests knowledge of the concepts</h2><p>Commit first. The answer stays closed until the room has chosen.</p><h3>A draft sounds generic even though the prompt says “make it sound like NUGES”. What is weak?</h3><div class="choices" id="choices"><button class="choice" type="button">Missing context</button><button class="choice" type="button">Missing API</button><button class="choice" type="button">Too much memory</button><button class="choice" type="button">The model is not trained</button></div><button class="action" id="reveal" type="button" disabled>Reveal answer</button><div class="reveal" id="answer"><strong>Answer: missing or vague context.</strong><br>A name does not supply verified facts, audience, examples, or constraints.</div></section>
-<section id="comparison"><div class="stage">03 · Prompt engineering versus context engineering</div><h2>Prompt Engineering versus Context Engineering</h2><p class="lead">Prompt engineering shapes the request. Context engineering shapes the working situation around the request.</p><div class="comparison"><div class="side"><strong>Prompt only</strong><p>A question enters. A generic output leaves.</p><div class="visual-flow"><span class="node">“Do this now”</span><span class="arrow">→</span><span class="node">MODEL</span><span class="arrow">→</span><span class="node">generic output</span></div></div><div class="side"><strong>Context loaded</strong><p>Facts, examples, constraints, memory, and permissions circulate.</p><div class="visual-flow"><span class="node">facts</span><span class="node">rules</span><span class="node">memory</span><span class="arrow">→</span><span class="node">situated output</span></div></div></div><p class="note"><strong>Unknown is not a blank.</strong> Name the evidence, decision, owner, or approval needed next.</p><div class="prompt-grid"><article class="prompt"><h3>Pass 1 · bare prompt</h3><pre id="p1">Give me five social media campaign ideas for NUGES.</pre><button class="copy" data-copy="p1" type="button">Copy prompt</button></article><article class="prompt"><h3>Pass 2 · verified facts</h3><pre id="p2">You are helping with a low-risk draft for NUGES Media. Use only supplied verified public facts. Draft three content ideas. Do not invent services, clients, results, prices, staff, or claims. For every missing or uncertain detail, do not guess. Classify it as one of: Source required: [claim or fact]; Decision required: [question the room must answer]; Owner required: [person or role]; Approval required: [action and approver]. Record the next action beside the unresolved item.</pre><button class="copy" data-copy="p2" type="button">Copy prompt</button></article><article class="prompt"><h3>Pass 3 · shared context</h3><pre id="p3">Using the shared NUGES organizational context and approved public sources, draft three low-risk content ideas. Show the source basis. For every unresolved item, classify it as Source required, Decision required, Owner required, or Approval required, and record the next action. Draft only. Do not publish or invent facts.</pre><button class="copy" data-copy="p3" type="button">Copy prompt</button></article></div></section>
+<section id="comparison" aria-labelledby="comparison-title">
+<div class="stage">03 · Prompt &amp; context</div>
+<h2 id="comparison-title">From prompt to working context</h2>
+<p class="context-intro"><strong>A prompt is what you ask.</strong> Context is what the system needs around the ask to do the work responsibly.</p>
+<p class="context-route">Ask <span aria-hidden="true">→</span> Add what we know <span aria-hidden="true">→</span> Set the rules <span aria-hidden="true">→</span> Review the draft</p>
+<aside class="context-unknowns" aria-label="Missing information rule"><p><strong>When information is missing, do not guess.</strong> Mark what is unknown, then ask for the evidence, decision, owner, or approval needed next.</p></aside>
+<div class="context-steps">
+<article class="context-step">
+<div class="context-label">PASS 1</div><h3>Bare request</h3>
+<dl><dt>What we give it</dt><dd>The task, without the background.</dd><dt>What improves</dt><dd>It knows the ask, but the answer may be generic.</dd></dl>
+<p class="context-example"><span>Example</span>“Draft three content ideas for NUGES.”</p>
+</article>
+<article class="context-step">
+<div class="context-label">PASS 2</div><h3>Add what we know</h3>
+<dl><dt>What we give it</dt><dd>The ask + verified facts, audience, examples, and constraints.</dd><dt>What improves</dt><dd>The draft can fit NUGES and the people we want to reach.</dd></dl>
+<p class="context-example"><span>Example</span>“Use the verified NUGES brief, its audience, and approved examples.”</p>
+</article>
+<article class="context-step">
+<div class="context-label">PASS 3</div><h3>Add how to operate</h3>
+<dl><dt>What we give it</dt><dd>Source rules, uncertainty handling, human approval, and output format.</dd><dt>What improves</dt><dd>Claims can be checked; unknowns and approval needs stay visible.</dd></dl>
+<p class="context-example"><span>Example</span>“Show sources and gaps in a table. Draft only; wait for human approval.”</p>
+</article>
+<article class="context-step context-result">
+<div class="context-label">RESULT</div><h3>A reviewable draft</h3>
+<dl><dt>What we give it</dt><dd>The ask + known facts + working rules.</dd><dt>What improves</dt><dd>A more useful, safer output for a human to review, not automatic truth.</dd></dl>
+<p class="context-example"><span>Example output</span>“Idea: explain a service once verified. Source required: service evidence. Status: draft, not approved.”</p>
+</article>
+</div>
+<p class="context-boundary"><strong>For every NUGES pass:</strong> Do not invent facts. Draft only. Do not publish or act externally without explicit human approval.</p>
+<details class="context-details">
+<summary>Tutor detail: complete working prompt &amp; source rules</summary>
+<div class="context-detail-body"><p>Prompt engineering shapes the ask. Context engineering supplies and maintains the facts, examples, constraints, and permissions around it. Add each pass to the previous one; context is not automatically true.</p>
+<pre id="comparisonPrompt">Using the shared NUGES Media organizational context, draft three low-risk content ideas for the audience specified in the supplied brief. Use supplied verified public facts, approved public sources, or explicitly authorized internal statements within the allowed data boundary. Use approved examples and the brief's constraints. If these inputs are missing, ask for them.
+
+Do not invent services, clients, results, prices, staff, or claims. Show the source basis for each idea. Separate verified or authorized information from proposals; do not treat a proposal as fact.
+
+For every missing or uncertain item, mark Source required, Decision required, Owner required, or Approval required. Record the evidence, decision, person or role, or explicit approval needed and the next action. Never infer facts, permissions, or approval owners.
+
+Output a table: idea | audience fit | source basis | unknowns and next action | review status.
+
+Draft only. Do not publish or act externally without explicit human approval. If the reviewer or approver is unknown, mark Owner required and ask who decides.</pre>
+<button class="copy" data-copy="comparisonPrompt" type="button">Copy working prompt</button></div>
+</details>
+</section>
 <section id="shared" class="shared-build"><div class="stage">04 · Practical collaborative build</div><span class="badge">SHARED NUGES CONTEXT</span><h2>Build this together</h2><p class="lead">The room decides what the context engine needs before anyone treats it as fact.</p><div class="build"><div class="body-art"><img src="assets/generated/heart.png" alt="Heart illustration showing chambers, vessels, and circulation arrows"><p class="art-caption">Biology analogy: the heart and vessels circulate what the body needs. AI mapping: shared context distributes what the task needs.</p></div><div class="layers" id="layers" aria-label="Seven shared context build layers"></div></div><p class="note"><strong>Test one real task, with low risk.</strong> Define its objective, audience, inputs, data boundary, tools, reviewer, approval rule, and definition of done. Then test the context engine.</p><div class="prompt-grid"><article class="prompt"><h3>Anchor prompt</h3><pre id="sharedPrompt">We are co-building a shared NUGES organizational context engine. Use verified public sources or authorized statements. Label every item Verified public, Authorized internal, Proposed, Source required, Decision required, Owner required, or Approval required. For every unresolved item, record the next action. Never infer facts, permissions, or approval owners.</pre><button class="copy" data-copy="sharedPrompt" type="button">Copy prompt</button></article><article class="prompt"><h3>Room prompt</h3><pre id="sharedPrompt2">Ask the room to choose one real, low-risk NUGES task. Record audience, objective, allowed data, prohibited data, reviewer, approval gate, and definition of done. For every unknown field, write the responsible next action: Source required, Decision required, Owner required, or Approval required.</pre><button class="copy" data-copy="sharedPrompt2" type="button">Copy prompt</button></article></div></section>
 <section id="personal"><div class="stage">05 · Assignment</div><h2>Build your own personal context engine</h2><p class="lead">Hand off from the collective body to your own context engine.</p><div class="build"><div class="body-art personal-art"><img src="assets/generated/hand.png" alt="Hand illustration interacting with a geometric interface"></div><div><ol><li>Choose one recurring task.</li><li>Identify the context it needs.</li><li>Define one review or approval boundary.</li></ol><div class="prompt"><h3>Personal sequence</h3><pre id="personalPrompt">Interview me about my role, responsibilities, goals, recurring tasks, audiences, preferences, outputs, quality rules, privacy boundaries, decision rules, and one low-risk test task. Ask, do not guess. Do not guess organization-wide details. Classify each unresolved item as Source required, Decision required, Owner required, or Approval required, and record the next action. Assemble my personal context engine v1 and ask me to correct anything untrue before saving.</pre><button class="copy" data-copy="personalPrompt" type="button">Copy prompt</button></div></div></div></section>
 <section id="end" class="end"><div class="stage">06 · End of class</div><h2>End of class</h2><p class="end-recap">Your task is the body.<br>Your context is the circulation.<br>Your judgment is the boundary.</p></section>
