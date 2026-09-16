@@ -28,7 +28,8 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 #comparison h2{max-width:none;margin:10px 0 16px;font-size:clamp(32px,3.6vw,50px)}
 #comparison .context-intro{max-width:940px;font-size:21px;line-height:1.45;margin-bottom:18px}
 #comparison .context-route{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:15px;font-weight:800;margin:0 0 20px}
-#comparison .context-route span{color:var(--blue)}
+#comparison .context-route-step{display:inline-flex;align-items:baseline;gap:10px;white-space:nowrap}
+#comparison .context-route-arrow{color:var(--blue)}
 #comparison .context-unknowns{padding:16px 20px;border-left:5px solid var(--green);background:var(--soft);margin-bottom:24px}
 #comparison .context-unknowns p{margin:0;max-width:1080px;font-size:18px}
 #comparison .context-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -48,9 +49,11 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 #comparison .context-detail-body{padding:8px 4px 20px;max-width:960px}
 #comparison pre{overflow-wrap:anywhere;min-height:0}
 #comparison .copy{color:var(--ink);border-color:var(--ink)}
-[data-theme=dark] #comparison .context-label,[data-theme=dark] #comparison .stage,[data-theme=dark] #comparison .context-route span{color:var(--green)}
+[data-theme=dark] #comparison .context-label,[data-theme=dark] #comparison .stage,[data-theme=dark] #comparison .context-route-arrow{color:var(--green)}
 @media(max-width:1100px){#comparison .context-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:600px){#comparison{padding-block:30px}#comparison .context-intro{font-size:18px}#comparison .context-route{gap:6px 10px;font-size:13px}#comparison .context-unknowns{padding:14px 16px}#comparison .context-unknowns p{font-size:16px}#comparison .context-steps{grid-template-columns:1fr}#comparison .context-step{padding:18px}#comparison .context-step h3{margin-bottom:16px}}
+@media(max-width:600px){#comparison{padding-block:30px}#comparison .context-intro{font-size:18px}#comparison .context-route{flex-direction:column;align-items:flex-start;gap:8px;font-size:15px}#comparison .context-unknowns{padding:14px 16px}#comparison .context-unknowns p{font-size:16px}#comparison .context-steps{grid-template-columns:1fr}#comparison .context-step{padding:18px}#comparison .context-step h3{margin-bottom:16px}}
+/* Keep mobile navigation labels on one line within the existing scroll rail. */
+@media(max-width:600px){.rail a{flex-shrink:0;white-space:nowrap;font-size:14px}}
 /* End comparison teaching sequence */</style>
 </head>
 <body>
@@ -70,7 +73,7 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 <div class="stage">03 · Prompt &amp; context</div>
 <h2 id="comparison-title">From prompt to working context</h2>
 <p class="context-intro"><strong>A prompt is what you ask.</strong> Context is what the system needs around the ask to do the work responsibly.</p>
-<p class="context-route">Ask <span aria-hidden="true">→</span> Add what we know <span aria-hidden="true">→</span> Set the rules <span aria-hidden="true">→</span> Review the draft</p>
+<p class="context-route"><span class="context-route-step">Bare request</span> <span class="context-route-step"><span class="context-route-arrow" aria-hidden="true">→</span> Add verified context</span> <span class="context-route-step"><span class="context-route-arrow" aria-hidden="true">→</span> Add operating rules</span> <span class="context-route-step"><span class="context-route-arrow" aria-hidden="true">→</span> Reviewable result</span></p>
 <aside class="context-unknowns" aria-label="Missing information rule"><p><strong>When information is missing, do not guess.</strong> Mark what is unknown, then ask for the evidence, decision, owner, or approval needed next.</p></aside>
 <div class="context-steps">
 <article class="context-step">
@@ -79,17 +82,17 @@ body.qa-atlas .hero,body.qa-atlas .hero+section{display:none}body.qa-shared .her
 <p class="context-example"><span>Example</span>“Draft three content ideas for NUGES.”</p>
 </article>
 <article class="context-step">
-<div class="context-label">PASS 2</div><h3>Add what we know</h3>
+<div class="context-label">PASS 2</div><h3>Add verified context</h3>
 <dl><dt>What we give it</dt><dd>The ask + verified facts, audience, examples, and constraints.</dd><dt>What improves</dt><dd>The draft can fit NUGES and the people we want to reach.</dd></dl>
 <p class="context-example"><span>Example</span>“Use the verified NUGES brief, its audience, and approved examples.”</p>
 </article>
 <article class="context-step">
-<div class="context-label">PASS 3</div><h3>Add how to operate</h3>
+<div class="context-label">PASS 3</div><h3>Add operating rules</h3>
 <dl><dt>What we give it</dt><dd>Source rules, uncertainty handling, human approval, and output format.</dd><dt>What improves</dt><dd>Claims can be checked; unknowns and approval needs stay visible.</dd></dl>
 <p class="context-example"><span>Example</span>“Show sources and gaps in a table. Draft only; wait for human approval.”</p>
 </article>
 <article class="context-step context-result">
-<div class="context-label">RESULT</div><h3>A reviewable draft</h3>
+<div class="context-label">RESULT</div><h3>Reviewable result</h3>
 <dl><dt>What we give it</dt><dd>The ask + known facts + working rules.</dd><dt>What improves</dt><dd>A more useful, safer output for a human to review, not automatic truth.</dd></dl>
 <p class="context-example"><span>Example output</span>“Idea: explain a service once verified. Source required: service evidence. Status: draft, not approved.”</p>
 </article>
