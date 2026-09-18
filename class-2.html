@@ -6,31 +6,35 @@
 <meta name="color-scheme" content="light dark">
 <title>NUGES Class 2 | From Market Signals to a Campaign Ready to Execute</title>
 <style>
-:root{--blue:#0750D0;--green:#01C676;--charcoal:#333333;--paper:#F7F7F4;--panel:#fff;--ink:#333333;--muted:#68727c;--line:#d9dedf;--soft:#eaf5f1;--deep:#072c29;--shadow:0 18px 50px #18343b16;--layout-width:1320px;color-scheme:light}
-[data-theme=dark]{--paper:#11191b;--panel:#192326;--ink:#f3f7f5;--muted:#b4c0bf;--line:#3a4849;--soft:#143c35;--deep:#061c1c;--shadow:0 18px 50px #0007;color-scheme:dark}
+:root{--blue:#0750D0;--green:#01C676;--charcoal:#333333;--paper:#F7F7F4;--panel:#fff;--ink:#333333;--muted:#68727c;--line:#d9dedf;--soft:#eaf5f1;--deep:#072c29;--shadow:0 22px 60px #18343b18;--max:1320px;color-scheme:light}
+[data-theme=dark]{--paper:#11191b;--panel:#192326;--ink:#f3f7f5;--muted:#b4c0bf;--line:#3a4849;--soft:#143c35;--deep:#061c1c;--shadow:0 22px 60px #0008;color-scheme:dark}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
 button,a{min-height:44px}button{font:inherit;color:inherit;cursor:pointer}
-.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px max(24px,calc((100vw - 1320px)/2));background:color-mix(in srgb,var(--paper) 94%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
-.brand-lockup{display:flex;align-items:flex-start;gap:7px;line-height:1;text-decoration:none;color:inherit}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px max(24px,calc((100vw - var(--max))/2));background:color-mix(in srgb,var(--paper) 94%,transparent);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.brand-lockup{display:flex;align-items:flex-start;gap:7px;text-decoration:none;color:inherit;line-height:1}
 .brand-mark{display:block;width:46px;height:34px;margin-top:4px}
 .wordmark-lockup{display:flex;flex-direction:column;align-items:flex-start;width:91px}
 .brand-wordmark{display:block;width:91px;height:30px}
-.brand-lockup span{display:block;margin:1px 0 0;color:var(--charcoal);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.brand-lockup span{display:block;margin-top:1px;color:var(--charcoal);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
 [data-theme=dark] .brand-lockup{background:var(--paper);padding:7px 9px;border-radius:3px}
 [data-theme=dark] .brand-lockup span{color:var(--charcoal)}
-.top-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.top-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .theme,.ghost{border:1px solid var(--line);background:var(--panel);padding:9px 13px;border-radius:5px;text-decoration:none;color:inherit;display:inline-flex;align-items:center}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px 100px}
 .stage,.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--blue)}
-.wrap{max-width:1320px;margin:auto;padding:0 24px 96px}
-h1,h2,h3,h4,p{margin-top:0}h1{font-size:clamp(40px,5.6vw,72px);line-height:.98;letter-spacing:-.05em;margin:14px 0 18px;max-width:920px}
-h2{font-size:clamp(28px,3.5vw,44px);letter-spacing:-.04em;line-height:1.08;margin:0 0 14px}
-h3{font-size:clamp(22px,2.4vw,30px);letter-spacing:-.03em;margin:0 0 12px}
-h4{margin:0 0 10px;font-size:18px}
-.lead,.intro{max-width:760px;font-size:clamp(18px,1.7vw,22px);color:var(--muted);margin-bottom:22px}
-.action{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--blue);background:var(--blue);color:#fff;padding:12px 18px;border-radius:4px;text-decoration:none;font-weight:800}
-.secondary{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--blue);background:transparent;color:var(--blue);padding:12px 18px;border-radius:4px;text-decoration:none;font-weight:800}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:-.055em;margin:14px auto 16px;max-width:920px;text-wrap:balance}
+h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.04em;line-height:1.05;margin:10px auto 12px;max-width:900px;text-wrap:balance}
+h3{font-size:clamp(22px,2.5vw,30px);margin:0 0 10px}
+.lead,.one-liner{max-width:720px;margin:0 auto 18px;font-size:clamp(18px,1.8vw,23px);line-height:1.4;color:var(--muted);text-wrap:pretty}
+.center{text-align:center}
+.action,.secondary{display:inline-flex;align-items:center;justify-content:center;border-radius:4px;padding:12px 18px;font-weight:800;text-decoration:none}
+.action{background:var(--blue);border:1px solid var(--blue);color:#fff}
+.secondary{background:transparent;border:1px solid var(--blue);color:var(--blue)}
 :focus-visible{outline:3px solid var(--green);outline-offset:3px}
-.state{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;border:1px solid var(--line);font-size:12px;font-weight:800;letter-spacing:.04em}
+.pills{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+.pill{padding:6px 11px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700;color:var(--muted)}
+.state{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;border:1px solid var(--line);font-size:12px;font-weight:800}
 .state.approved{background:#e8f7ef;color:#0b6b3a;border-color:#9ed9b8}
 .state.public{background:#e8eefc;color:#1140a0;border-color:#a9bff5}
 .state.hypothesis{background:#f4f1e4;color:#6a5100;border-color:#e0d3a0}
@@ -38,90 +42,56 @@ h4{margin:0 0 10px;font-size:18px}
 .state.draft{background:#fff3cc;color:#6a5100;border-color:#dfc56f}
 .state.hold{background:#eee;color:#555;border-color:#cfcfcf}
 .state.revise{background:#f3e5e6;color:#8c252d;border-color:#e0b4b8}
-.source-key{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.source-key{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:18px}
 
-/* Hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:36px;align-items:center;padding:42px 0 28px}
-.hero-copy .meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
-.pill{padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700;color:var(--muted)}
-.hero-visual{min-width:0;display:grid;place-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-.hero-visual img{display:block;width:min(100%,420px);height:auto;aspect-ratio:2/3;object-fit:contain}
-.art-caption{margin:12px 0 0;max-width:420px;color:var(--muted);font-size:14px;text-align:center}
+/* Class 1 pattern: text first, image stage under */
+.block{padding:54px 0 18px;scroll-margin-top:120px}
+.block-head{max-width:860px;margin:0 auto 22px;text-align:center}
+.visual-stage{width:100%;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);padding:28px clamp(12px,3vw,36px);display:grid;justify-items:center;gap:14px}
+.visual-stage img,.visual-stage svg{display:block;width:min(100%,920px);height:auto;max-height:none}
+.visual-stage img.portrait{width:min(100%,420px);aspect-ratio:2/3;object-fit:contain}
+.visual-stage img.landscape{width:min(100%,920px);aspect-ratio:16/10;object-fit:contain}
+.caption{max-width:720px;margin:0 auto;text-align:center;color:var(--muted);font-size:15px}
+.cta-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
 
-/* Flightpath */
-.flight{padding:28px 0 10px;scroll-margin-top:120px}
-.flight-map{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px;margin:18px 0 22px}
-.flight-step{min-width:0;border:1px solid var(--line);background:var(--panel);padding:12px 10px;text-align:left;border-radius:10px;position:relative}
-.flight-step strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:6px}
-.flight-step span{display:block;font-size:13px;font-weight:700;line-height:1.25}
-.flight-step[aria-selected=true]{border-color:var(--green);background:var(--soft);box-shadow:inset 0 0 0 1px var(--green)}
-.flight-step::after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--blue);font-weight:900;z-index:1}
-.flight-step:last-child::after{content:""}
-.flight-panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;min-height:150px;box-shadow:var(--shadow)}
-.flight-panel p{margin:0;max-width:820px;font-size:18px}
+/* Interactive flight strip under a big diagram */
+.flight-rail{display:flex;gap:8px;overflow:auto;width:100%;max-width:980px;padding:4px 2px 10px;scroll-snap-type:x mandatory}
+.flight-rail button{flex:0 0 auto;scroll-snap-align:start;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:10px 14px;font-weight:800;color:var(--muted);white-space:nowrap}
+.flight-rail button[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.stage-note{max-width:760px;text-align:center;font-size:18px;margin:0 auto;min-height:3.2em}
 
-/* Capability workbench */
-.workbench{padding:34px 0;scroll-margin-top:120px}
-.cap-rail{display:flex;gap:8px;overflow:auto;padding-bottom:8px;margin:0 0 18px}
-.cap-rail button{flex:0 0 auto;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:10px 14px;font-weight:800;color:var(--muted)}
-.cap-rail button[aria-selected=true]{background:var(--blue);border-color:var(--blue);color:#fff}
-.cap-stage{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:20px;align-items:start}
-.cap-card,.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
-.cap-card .label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:var(--blue);margin-bottom:8px}
-.cap-meta{display:grid;gap:12px}
-.cap-meta div{padding:14px 16px;background:var(--soft);border-left:4px solid var(--green)}
-.cap-meta strong{display:block;margin-bottom:4px}
+/* Capability chooser above a large visual */
+.cap-rail{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.cap-rail button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:11px 16px;font-weight:800;color:var(--muted)}
+.cap-rail button[aria-selected=true]{background:var(--green);border-color:var(--green);color:#073}
+.cap-copy{max-width:760px;text-align:center;margin:0 auto 16px}
+.cap-copy p{margin:0;font-size:18px;color:var(--muted)}
 
-/* Visual boards */
-.boards{padding:20px 0 10px}
-.board-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.board{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0;box-shadow:var(--shadow)}
-.board h3{font-size:20px;margin-bottom:8px}
-.board p{color:var(--muted);font-size:15px;margin-bottom:14px}
-.diagram{width:100%;height:auto;display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px}
-.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
-.work-table{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}
-.work-table th,.work-table td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+/* Compact work surfaces, still visual-first */
+.board-shell{width:100%;max-width:980px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:var(--paper);width:100%}
+.work-table{width:100%;border-collapse:collapse;min-width:520px;font-size:14px}
+.work-table th,.work-table td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 .work-table th{background:var(--soft);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .signal-status{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:800}
 .signal-status.checked{background:var(--green);border-color:var(--green);color:#073}
+.draft-banner{display:inline-flex;margin:0 auto 12px;padding:8px 12px;border-radius:8px;background:#fff3cc;color:#6a5100;border:1px solid #dfc56f;font-weight:900;letter-spacing:.04em}
+.mini-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;max-width:980px}
+.mini-grid div{padding:16px;border-radius:14px;background:var(--soft);border:1px solid var(--line);text-align:center;font-weight:800}
+.mini-grid strong{display:block;color:var(--blue);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.close-box{width:100%;max-width:900px;padding:28px;border-radius:18px;background:var(--deep);color:#fff;text-align:center}
+.close-box p{margin:10px 0 0;color:#cfe0dc;font-size:18px}
+.footer-nav{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;padding-top:28px}
 
-/* Campaign sections */
-.section{padding:42px 0;border-top:1px solid var(--line);scroll-margin-top:120px}
-.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.brief-sheet dl{display:grid;grid-template-columns:180px minmax(0,1fr);gap:10px 16px;margin:0}
-.brief-sheet dt{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
-.brief-sheet dd{margin:0}
-.cascade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
-.cascade div{padding:14px;border:1px solid var(--line);border-top:4px solid var(--blue);background:var(--soft);border-radius:8px}
-.cascade strong{display:block;margin-bottom:6px}
-.draft-banner{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;background:#fff3cc;color:#6a5100;border:1px solid #dfc56f;font-weight:900;letter-spacing:.04em;margin-bottom:14px}
-.review-log{margin:0;padding-left:18px}
-.review-log li{margin-bottom:10px}
-.assessment-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
-.assessment-grid div{padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
-.assessment-grid strong{display:block;margin-bottom:8px;color:var(--blue)}
-.close-box{padding:20px;border-radius:14px;background:var(--deep);color:#fff}
-.close-box p{margin:8px 0 0;color:#cfe0dc}
-.footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:28px}
-
-@media(max-width:1100px){
-.flight-map{grid-template-columns:repeat(3,minmax(0,1fr))}
-.flight-step::after{content:""}
-.board-grid,.assessment-grid,.cascade{grid-template-columns:1fr 1fr}
-}
 @media(max-width:800px){
 .top,.wrap{padding-inline:16px}
-.hero,.cap-stage,.grid-2,.grid-3,.board-grid,.assessment-grid,.cascade,.brief-sheet dl{grid-template-columns:1fr}
-.flight-map{grid-template-columns:1fr 1fr}
-.hero{padding-top:28px;gap:22px}
-.hero-visual img{width:min(100%,340px)}
-.brief-sheet dl{gap:6px}
-.brief-sheet dt{margin-top:8px}
+.block{padding-top:40px}
+.visual-stage{padding:18px 12px;border-radius:16px}
+.mini-grid{grid-template-columns:1fr 1fr}
+.visual-stage img.portrait{width:min(100%,320px)}
 }
 @media(max-width:460px){
-.flight-map,.assessment-grid{grid-template-columns:1fr}
+.mini-grid{grid-template-columns:1fr}
 h1{font-size:40px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -129,347 +99,288 @@ h1{font-size:40px}
 </head>
 <body>
 <header class="top">
-  <a class="brand-lockup" href="index.html" aria-label="IRIRI Labs home">
+  <a class="brand-lockup" href="index.html" aria-label="Back to Class 1">
     <img class="brand-mark" src="assets/iriri-mark.svg" alt="">
     <div class="wordmark-lockup"><img class="brand-wordmark" src="assets/iriri-wordmark.svg" alt="IRIRI"><span>Labs</span></div>
   </a>
   <div class="top-actions">
-    <a class="ghost" href="index.html">Back to Class 1</a>
+    <a class="ghost" href="index.html">Class 1</a>
     <button class="theme" id="theme" type="button">Dark mode</button>
   </div>
 </header>
 
 <main class="wrap">
-  <section class="hero" aria-labelledby="class2-title">
-    <div class="hero-copy">
+  <!-- HERO: text above, full image below like Class 1 -->
+  <section class="block center" aria-labelledby="class2-title">
+    <div class="block-head">
       <div class="kicker">NUGES MEDIA &amp; ADVERTISING · CLASS 2</div>
       <h1 id="class2-title">From Market Signals to a NUGES Campaign Ready to Execute</h1>
-      <p class="lead">Turn real market evidence and approved NUGES context into one validated campaign brief and a practical execution starter pack for a discovery-conversation campaign.</p>
-      <div class="meta">
-        <span class="pill">Market: Nigeria</span>
-        <span class="pill">Harness-agnostic</span>
-        <span class="pill">Shared team build</span>
+      <p class="lead">One shared team build: real market evidence plus approved NUGES context becomes a validated campaign brief and execution starter pack.</p>
+      <div class="pills">
+        <span class="pill">Nigeria</span>
+        <span class="pill">Discovery conversation CTA</span>
         <span class="pill">No external activation</span>
       </div>
-      <p class="intro">Class 1 established the AI system and shared organizational knowledge base. Class 2 applies connected capabilities to a real NUGES research-to-strategy-to-execution workflow.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="action" href="#flightpath">Build the campaign workflow</a>
-        <a class="secondary" href="#capabilities">Open capability workbench</a>
-      </div>
-      <div class="source-key" aria-label="Source state key">
-        <span class="state approved">Approved NUGES context</span>
-        <span class="state public">Public evidence</span>
-        <span class="state hypothesis">Hypothesis</span>
-        <span class="state confirm">[NUGES TO CONFIRM]</span>
-        <span class="state draft">Draft</span>
-        <span class="state hold">Hold</span>
-        <span class="state revise">Revise</span>
+      <div class="cta-row">
+        <a class="action" href="#flightpath">Enter the workflow</a>
+        <a class="secondary" href="#capabilities">See the capabilities</a>
       </div>
     </div>
-    <figure class="hero-visual">
-      <img src="assets/generated/class-2-capabilities-strength.png" width="1024" height="1536" alt="Educational anatomy figure in a rear three-quarter strength pose with blue capability pathways">
-      <figcaption class="art-caption">Capability metaphor: coordinated strength and connected action. This is instructional anatomy, not a claim that AI is human or biologically equivalent.</figcaption>
-    </figure>
+    <div class="visual-stage">
+      <img class="portrait" src="assets/generated/class-2-capabilities-strength.png" width="1024" height="1536" alt="Educational anatomy figure in a rear three-quarter strength pose with blue capability pathways">
+      <p class="caption">Capability metaphor: coordinated strength and connected action. Instructional anatomy only. Not a claim that AI is human or biologically equivalent.</p>
+    </div>
+    <div class="source-key" aria-label="Source state key">
+      <span class="state approved">Approved NUGES context</span>
+      <span class="state public">Public evidence</span>
+      <span class="state hypothesis">Hypothesis</span>
+      <span class="state confirm">[NUGES TO CONFIRM]</span>
+      <span class="state draft">Draft</span>
+      <span class="state hold">Hold</span>
+      <span class="state revise">Revise</span>
+    </div>
   </section>
 
-  <section class="flight" id="flightpath" aria-labelledby="flight-title">
-    <div class="stage">Campaign flightpath</div>
-    <h2 id="flight-title">One shared path from market signals to approval</h2>
-    <p class="intro">Select each stage. The panel updates with the agency move the class will complete together.</p>
-    <div class="flight-map" role="tablist" aria-label="Campaign workflow stages" id="flight-tabs"></div>
-    <div class="flight-panel" id="flight-panel" role="tabpanel" aria-live="polite"></div>
+  <!-- FLIGHTPATH -->
+  <section class="block" id="flightpath" aria-labelledby="flight-title">
+    <div class="block-head">
+      <div class="stage">Campaign flightpath</div>
+      <h2 id="flight-title">Signals become strategy, then controlled execution</h2>
+      <p class="one-liner">Tap a stage. The map and note update. Keep the whole path in view.</p>
+    </div>
+    <div class="visual-stage">
+      <svg id="flight-map" viewBox="0 0 980 340" role="img" aria-label="Interactive campaign flightpath diagram" width="980" height="340">
+        <defs>
+          <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0750D0"/></marker>
+        </defs>
+        <path d="M70 170 H910" stroke="#0750D0" stroke-width="5" marker-end="url(#arr)" fill="none"/>
+        <!-- nodes injected by JS labels over fixed positions -->
+        <g id="flight-nodes"></g>
+      </svg>
+      <div class="flight-rail" role="tablist" aria-label="Campaign stages" id="flight-tabs"></div>
+      <p class="stage-note" id="flight-note" aria-live="polite"></p>
+    </div>
   </section>
 
-  <section class="workbench" id="capabilities" aria-labelledby="cap-title">
-    <div class="stage">Capability families</div>
-    <h2 id="cap-title">Observe · Retrieve · Create · Communicate · Operate</h2>
-    <p class="intro">These are applied strategy moves, not vendor product tours. Use tools the team already has.</p>
+  <!-- CAPABILITIES -->
+  <section class="block" id="capabilities" aria-labelledby="cap-title">
+    <div class="block-head">
+      <div class="stage">Capability families</div>
+      <h2 id="cap-title">Five moves. One campaign.</h2>
+      <p class="one-liner">Choose a capability. The visual and the room action change.</p>
+    </div>
     <div class="cap-rail" role="tablist" aria-label="Capability families" id="cap-tabs"></div>
-    <div class="cap-stage">
-      <article class="cap-card" id="cap-main" role="tabpanel" aria-live="polite"></article>
-      <aside class="cap-meta" id="cap-side" aria-live="polite"></aside>
+    <div class="cap-copy" id="cap-copy" aria-live="polite"></div>
+    <div class="visual-stage">
+      <img class="landscape" id="cap-image" src="assets/generated/senses.png" width="1024" height="640" alt="">
+      <p class="caption" id="cap-caption"></p>
     </div>
   </section>
 
-  <section class="boards" aria-label="Interactive teaching boards">
-    <div class="board-grid">
-      <article class="board" id="observe-board">
-        <h3>Observe board</h3>
-        <p>Public sources become dated signals before any strategy claim is written.</p>
-        <svg class="diagram" viewBox="0 0 420 220" role="img" aria-label="Source to signal board diagram">
-          <rect x="12" y="24" width="90" height="48" rx="8" fill="#e8eefc" stroke="#0750D0"/>
-          <text x="57" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#1140a0">Source</text>
-          <rect x="132" y="24" width="90" height="48" rx="8" fill="#fff" stroke="#333"/>
-          <text x="177" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#333">Date</text>
-          <rect x="252" y="24" width="150" height="48" rx="8" fill="#fff" stroke="#333"/>
-          <text x="327" y="52" text-anchor="middle" font-size="12" font-weight="700" fill="#333">Observed signal</text>
-          <path d="M57 72v34h270v0" fill="none" stroke="#0750D0" stroke-width="3" marker-end="url(#arrow)"/>
-          <rect x="12" y="118" width="190" height="70" rx="10" fill="#f4f1e4" stroke="#e0d3a0"/>
-          <text x="107" y="158" text-anchor="middle" font-size="13" font-weight="800" fill="#6a5100">Interpretation</text>
-          <rect x="220" y="118" width="182" height="70" rx="10" fill="#e8f7ef" stroke="#9ed9b8"/>
-          <text x="311" y="150" text-anchor="middle" font-size="13" font-weight="800" fill="#0b6b3a">Evidence</text>
-          <text x="311" y="170" text-anchor="middle" font-size="12" fill="#0b6b3a">or Hypothesis</text>
-          <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0750D0"/></marker></defs>
-        </svg>
-      </article>
-      <article class="board">
-        <h3>Evidence to proposition</h3>
-        <p>Only approved NUGES context can ground a proposition. Unknowns stay visible.</p>
-        <svg class="diagram" viewBox="0 0 420 220" role="img" aria-label="Evidence to proposition trace">
-          <rect x="16" y="30" width="120" height="54" rx="10" fill="#e8f7ef" stroke="#01C676"/>
-          <text x="76" y="62" text-anchor="middle" font-size="12" font-weight="800" fill="#0b6b3a">Approved</text>
-          <rect x="150" y="30" width="120" height="54" rx="10" fill="#e8eefc" stroke="#0750D0"/>
-          <text x="210" y="62" text-anchor="middle" font-size="12" font-weight="800" fill="#1140a0">Public</text>
-          <rect x="284" y="30" width="120" height="54" rx="10" fill="#f7ecec" stroke="#e2b0b4"/>
-          <text x="344" y="62" text-anchor="middle" font-size="11" font-weight="800" fill="#8c252d">Confirm</text>
-          <path d="M76 84v28h134" fill="none" stroke="#0750D0" stroke-width="3" marker-end="url(#arrow2)"/>
-          <path d="M210 84v28" fill="none" stroke="#0750D0" stroke-width="3"/>
-          <path d="M344 84v28h-134" fill="none" stroke="#8c252d" stroke-width="3" stroke-dasharray="5 4"/>
-          <rect x="120" y="118" width="180" height="66" rx="12" fill="#fff" stroke="#333"/>
-          <text x="210" y="148" text-anchor="middle" font-size="14" font-weight="800" fill="#333">Proposition fit</text>
-          <text x="210" y="168" text-anchor="middle" font-size="12" fill="#68727c">Hold · Revise · Confirm</text>
-          <defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0750D0"/></marker></defs>
-        </svg>
-      </article>
-      <article class="board">
-        <h3>Big idea cascade</h3>
-        <p>One central idea branches into channel roles. Arrows mark direction of travel.</p>
-        <svg class="diagram" viewBox="0 0 420 220" role="img" aria-label="Big idea to channel cascade">
-          <circle cx="210" cy="48" r="34" fill="#0750D0"/>
-          <text x="210" y="53" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">Big idea</text>
-          <path d="M210 82 L70 140" stroke="#0750D0" stroke-width="4" marker-end="url(#arrow3)"/>
-          <path d="M210 82 L160 150" stroke="#0750D0" stroke-width="4" marker-end="url(#arrow3)"/>
-          <path d="M210 82 L270 150" stroke="#0750D0" stroke-width="4" marker-end="url(#arrow3)"/>
-          <path d="M210 82 L350 140" stroke="#0750D0" stroke-width="4" marker-end="url(#arrow3)"/>
-          <rect x="18" y="150" width="104" height="48" rx="8" fill="#eaf5f1" stroke="#01C676"/>
-          <text x="70" y="178" text-anchor="middle" font-size="11" font-weight="800" fill="#0b6b3a">Editorial</text>
-          <rect x="112" y="158" width="96" height="40" rx="8" fill="#eaf5f1" stroke="#01C676"/>
-          <text x="160" y="182" text-anchor="middle" font-size="11" font-weight="800" fill="#0b6b3a">Owned digital</text>
-          <rect x="222" y="158" width="96" height="40" rx="8" fill="#eaf5f1" stroke="#01C676"/>
-          <text x="270" y="182" text-anchor="middle" font-size="11" font-weight="800" fill="#0b6b3a">Presentation</text>
-          <rect x="298" y="150" width="104" height="48" rx="8" fill="#eaf5f1" stroke="#01C676"/>
-          <text x="350" y="178" text-anchor="middle" font-size="11" font-weight="800" fill="#0b6b3a">Conversation</text>
-          <defs><marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#0750D0"/></marker></defs>
-        </svg>
-      </article>
+  <!-- OBSERVE -->
+  <section class="block" id="observe" aria-labelledby="observe-title">
+    <div class="block-head">
+      <div class="stage">01 · Observe</div>
+      <h2 id="observe-title">Read the market first</h2>
+      <p class="one-liner">Live browser sprint: 3 competitors, 3 campaign examples, 3 audience signals.</p>
     </div>
-  </section>
-
-  <section class="section" id="observe">
-    <div class="stage">01 · Observe</div>
-    <h2>Read the market before writing the campaign</h2>
-    <p class="intro">Live evidence sprint in Chrome or the team browser. Collect about 5 to 10 signals only: 3 comparable agencies or competitors, 3 public campaign or channel examples, 3 audience or category signals.</p>
-    <div class="grid-2">
-      <article class="panel">
-        <h3>Campaign exercise parameters</h3>
-        <p><strong>Market:</strong> Nigeria<br>
-        <strong>Positioning:</strong> NUGES as a forward-thinking and innovative media and advertising company.<br>
-        <strong>Audience:</strong> Decision-makers at organizations that need a modern media and advertising partner fusing creative execution with technology and AI.<br>
-        <strong>Central message:</strong> Creative execution, amplified by technology and AI.<br>
-        <strong>CTA:</strong> Request a discovery conversation with NUGES.</p>
-      </article>
-      <article class="panel">
-        <h3>Observation boundary</h3>
-        <p><span class="state public">Public evidence</span> supports market observation. It does not establish internal NUGES truth or competitor performance claims. Interpretations stay hypotheses until supported.</p>
-      </article>
-    </div>
-    <article class="panel" style="margin-top:18px">
-      <header style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:end;margin-bottom:12px">
-        <div>
-          <h3 style="margin-bottom:6px">Shared signal board</h3>
-          <p style="margin:0;color:var(--muted)">Record a concise evidence trail before drawing strategy conclusions.</p>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/senses.png" width="1024" height="640" alt="Senses illustration representing market observation">
+      <svg viewBox="0 0 980 260" width="980" height="260" role="img" aria-label="Source to signal flow">
+        <rect x="40" y="40" width="160" height="70" rx="16" fill="#e8eefc" stroke="#0750D0" stroke-width="3"/>
+        <text x="120" y="82" text-anchor="middle" font-size="22" font-weight="800" fill="#1140a0">Source</text>
+        <path d="M200 75 H300" stroke="#0750D0" stroke-width="5" marker-end="url(#arr2)"/>
+        <rect x="300" y="40" width="160" height="70" rx="16" fill="#fff" stroke="#333" stroke-width="3"/>
+        <text x="380" y="82" text-anchor="middle" font-size="22" font-weight="800" fill="#333">Date</text>
+        <path d="M460 75 H560" stroke="#0750D0" stroke-width="5" marker-end="url(#arr2)"/>
+        <rect x="560" y="40" width="200" height="70" rx="16" fill="#fff" stroke="#333" stroke-width="3"/>
+        <text x="660" y="82" text-anchor="middle" font-size="22" font-weight="800" fill="#333">Signal</text>
+        <path d="M660 110 V150" stroke="#0750D0" stroke-width="5" marker-end="url(#arr2)"/>
+        <rect x="250" y="160" width="220" height="70" rx="16" fill="#f4f1e4" stroke="#e0d3a0" stroke-width="3"/>
+        <text x="360" y="202" text-anchor="middle" font-size="20" font-weight="800" fill="#6a5100">Hypothesis</text>
+        <rect x="510" y="160" width="220" height="70" rx="16" fill="#e8f7ef" stroke="#01C676" stroke-width="3"/>
+        <text x="620" y="202" text-anchor="middle" font-size="20" font-weight="800" fill="#0b6b3a">Evidence</text>
+        <defs><marker id="arr2" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0750D0"/></marker></defs>
+      </svg>
+      <div class="board-shell">
+        <div class="table-wrap">
+          <table class="work-table">
+            <thead><tr><th>Source</th><th>Date</th><th>Signal</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Google Trends</td><td>[ADD]</td><td>Category language cue</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
+              <tr><td>Meta Ad Library</td><td>[ADD]</td><td>Creative pattern</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
+              <tr><td>Public site / channel</td><td>[ADD]</td><td>Positioning or format cue</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
+            </tbody>
+          </table>
         </div>
-      </header>
-      <div class="table-wrap">
-        <table class="work-table">
-          <thead><tr><th>Source</th><th>Date</th><th>Observed signal</th><th>Interpretation</th><th>Status</th></tr></thead>
-          <tbody>
-            <tr><td>Google Trends</td><td>[ADD DATE]</td><td>Search pattern relevant to the category</td><td>Possible demand or language cue</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
-            <tr><td>Meta Ad Library</td><td>[ADD DATE]</td><td>Visible category messaging pattern</td><td>Possible creative convention</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
-            <tr><td>Public company site</td><td>[ADD DATE]</td><td>Approved public positioning language</td><td>Source for comparison only</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
-            <tr><td>Channel example</td><td>[ADD DATE]</td><td>Format or placement pattern</td><td>Channel-role hypothesis</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
-            <tr><td>Audience or category signal</td><td>[ADD DATE]</td><td>Decision-maker cue</td><td>Psychographic hypothesis</td><td><button class="signal-status" type="button" aria-pressed="false">Hypothesis</button></td></tr>
-          </tbody>
-        </table>
       </div>
-    </article>
-  </section>
-
-  <section class="section" id="retrieve">
-    <div class="stage">02 · Retrieve</div>
-    <h2>Ground the proposition in approved NUGES context</h2>
-    <p class="intro">Retrieve from the shared NUGES organizational knowledge base already built in Class 1, such as Obsidian or the team-selected equivalent. Do not rebuild the knowledge base here.</p>
-    <div class="grid-2">
-      <article class="panel">
-        <h3>Approved-context panel</h3>
-        <div class="table-wrap">
-          <table class="work-table">
-            <thead><tr><th>Capability</th><th>Approved source</th><th>Audience relevance</th><th>Missing proof</th></tr></thead>
-            <tbody>
-              <tr><td>[RETRIEVE FROM KNOWLEDGE BASE]</td><td><span class="state approved">Approved NUGES context</span></td><td>[MAP TO DECISION CRITERIA]</td><td><span class="state confirm">[NUGES TO CONFIRM]</span> Context owner: verify source and scope.</td></tr>
-              <tr><td>[RETRIEVE FROM KNOWLEDGE BASE]</td><td><span class="state approved">Approved NUGES context</span></td><td>[MAP TO AUDIENCE NEED]</td><td><span class="state confirm">[NUGES TO CONFIRM]</span> Strategy lead: request proof.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
-      <article class="panel">
-        <h3>Retrieval rule</h3>
-        <p>Every NUGES proposition needs an approved source. If a service, proof point, outcome, client, policy or approval owner is unresolved, leave it as <strong>[NUGES TO CONFIRM]</strong> with a role and next action. Do not invent NUGES facts.</p>
-      </article>
+      <p class="caption">Public evidence supports observation. It does not invent NUGES truth.</p>
     </div>
   </section>
 
-  <section class="section" id="strategy">
-    <div class="stage">03 · Strategy workshop</div>
-    <h2>Join audience, pain points and proposition fit</h2>
-    <p class="intro">Bring the signal board and approved context together. Assumptions become visible rather than being smuggled into campaign claims.</p>
-    <div class="grid-2">
-      <article class="panel">
-        <h3>Primary decision-maker profile</h3>
-        <ul>
-          <li><strong>Organizational situation</strong> [WORKSHOP INPUT]</li>
-          <li><strong>Motivators</strong> [EVIDENCE OR HYPOTHESIS]</li>
-          <li><strong>Anxieties</strong> [EVIDENCE OR HYPOTHESIS]</li>
-          <li><strong>Decision criteria</strong> [WORKSHOP INPUT]</li>
-          <li><strong>Information channels</strong> [PUBLIC EVIDENCE]</li>
-          <li><strong>Channel hypotheses</strong> [TEST, DO NOT ASSUME]</li>
-        </ul>
-      </article>
-      <article class="panel">
-        <h3>Pain point / proposition fit</h3>
-        <div class="table-wrap">
-          <table class="work-table">
-            <thead><tr><th>Decision pain point</th><th>NUGES proposition</th><th>Evidence link</th><th>Next action</th></tr></thead>
-            <tbody>
-              <tr><td>[VALIDATED PAIN POINT]</td><td>[APPROVED CAPABILITY OR VALUE]</td><td><span class="state confirm">[NUGES TO CONFIRM]</span></td><td>Context owner: attach approved source.</td></tr>
-              <tr><td>[VALIDATED PAIN POINT]</td><td>Creative execution, amplified by technology and AI</td><td><span class="state public">Public evidence</span> + approved context</td><td>Strategy lead: test fit in review.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </article>
+  <!-- RETRIEVE -->
+  <section class="block" id="retrieve" aria-labelledby="retrieve-title">
+    <div class="block-head">
+      <div class="stage">02 · Retrieve</div>
+      <h2 id="retrieve-title">Ground the proposition</h2>
+      <p class="one-liner">Pull only approved NUGES context from the Class 1 knowledge base.</p>
+    </div>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/heart.png" width="1024" height="640" alt="Heart and circulation illustration representing context retrieval">
+      <svg viewBox="0 0 980 240" width="980" height="240" role="img" aria-label="Approved context to proposition">
+        <rect x="50" y="40" width="220" height="90" rx="18" fill="#e8f7ef" stroke="#01C676" stroke-width="3"/>
+        <text x="160" y="95" text-anchor="middle" font-size="22" font-weight="800" fill="#0b6b3a">Approved context</text>
+        <path d="M270 85 H390" stroke="#0750D0" stroke-width="5" marker-end="url(#arr3)"/>
+        <rect x="390" y="40" width="200" height="90" rx="18" fill="#e8eefc" stroke="#0750D0" stroke-width="3"/>
+        <text x="490" y="95" text-anchor="middle" font-size="22" font-weight="800" fill="#1140a0">Public evidence</text>
+        <path d="M590 85 H700" stroke="#0750D0" stroke-width="5" marker-end="url(#arr3)"/>
+        <rect x="700" y="40" width="230" height="90" rx="18" fill="#fff" stroke="#333" stroke-width="3"/>
+        <text x="815" y="95" text-anchor="middle" font-size="22" font-weight="800" fill="#333">Proposition fit</text>
+        <rect x="300" y="160" width="380" height="55" rx="14" fill="#f7ecec" stroke="#e2b0b4" stroke-width="3"/>
+        <text x="490" y="195" text-anchor="middle" font-size="20" font-weight="800" fill="#8c252d">[NUGES TO CONFIRM] stays visible</text>
+        <defs><marker id="arr3" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0750D0"/></marker></defs>
+      </svg>
+      <p class="caption">If proof is missing, hold it. Do not invent services, clients, outcomes or approvers.</p>
     </div>
   </section>
 
-  <section class="section" id="create">
-    <div class="stage">04 · Create</div>
-    <h2>Draft the strategy and big idea</h2>
-    <p class="intro">Work in a shared Google Doc by default, or the strategy document tool NUGES already uses. This remains a draft until the designated roles approve it.</p>
-    <article class="panel brief-sheet">
+  <!-- STRATEGY / CREATE -->
+  <section class="block" id="create" aria-labelledby="create-title">
+    <div class="block-head">
+      <div class="stage">03 · Create</div>
+      <h2 id="create-title">Draft the big idea, then cascade it</h2>
+      <p class="one-liner">Shared Google Doc. Draft only. One idea, four channel roles.</p>
+    </div>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/hand.png" width="1024" height="640" alt="Hands illustration representing creation and drafting tools">
+      <svg viewBox="0 0 980 320" width="980" height="320" role="img" aria-label="Big idea channel cascade">
+        <circle cx="490" cy="70" r="48" fill="#0750D0"/>
+        <text x="490" y="78" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">Big idea</text>
+        <path d="M490 118 L180 210" stroke="#0750D0" stroke-width="5" marker-end="url(#arr4)"/>
+        <path d="M490 118 L360 230" stroke="#0750D0" stroke-width="5" marker-end="url(#arr4)"/>
+        <path d="M490 118 L620 230" stroke="#0750D0" stroke-width="5" marker-end="url(#arr4)"/>
+        <path d="M490 118 L800 210" stroke="#0750D0" stroke-width="5" marker-end="url(#arr4)"/>
+        <rect x="90" y="220" width="180" height="70" rx="16" fill="#eaf5f1" stroke="#01C676" stroke-width="3"/>
+        <text x="180" y="262" text-anchor="middle" font-size="18" font-weight="800" fill="#0b6b3a">Editorial</text>
+        <rect x="270" y="240" width="180" height="70" rx="16" fill="#eaf5f1" stroke="#01C676" stroke-width="3"/>
+        <text x="360" y="282" text-anchor="middle" font-size="18" font-weight="800" fill="#0b6b3a">Owned digital</text>
+        <rect x="530" y="240" width="180" height="70" rx="16" fill="#eaf5f1" stroke="#01C676" stroke-width="3"/>
+        <text x="620" y="282" text-anchor="middle" font-size="18" font-weight="800" fill="#0b6b3a">Presentation</text>
+        <rect x="710" y="220" width="180" height="70" rx="16" fill="#eaf5f1" stroke="#01C676" stroke-width="3"/>
+        <text x="800" y="262" text-anchor="middle" font-size="18" font-weight="800" fill="#0b6b3a">Conversation</text>
+        <defs><marker id="arr4" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0750D0"/></marker></defs>
+      </svg>
       <div class="draft-banner">DRAFT · NOT APPROVED</div>
-      <h3>Draft campaign brief</h3>
-      <dl>
-        <dt>Objective</dt><dd>Invite a discovery conversation with NUGES.</dd>
-        <dt>Audience</dt><dd>Decision-makers at organizations needing a modern media and advertising partner fusing creative execution with technology and AI.</dd>
-        <dt>Insight</dt><dd>[TRACE TO SIGNAL BOARD OR MARK HYPOTHESIS]</dd>
-        <dt>Proposition</dt><dd>Creative execution, amplified by technology and AI.</dd>
-        <dt>Central message</dt><dd>Creative execution, amplified by technology and AI.</dd>
-        <dt>Big idea</dt><dd>[DRAFT IDEA WITH EVIDENCE STATUS]</dd>
-        <dt>Reasons to believe</dt><dd><span class="state confirm">[NUGES TO CONFIRM]</span> Attach approved context before approval.</dd>
-        <dt>Tone / direction</dt><dd>Forward-thinking, clear and evidence-led.</dd>
-        <dt>CTA</dt><dd>Request a discovery conversation with NUGES.</dd>
-      </dl>
-      <h3 style="margin-top:24px">Channel cascade</h3>
-      <div class="cascade">
-        <div><strong>Discover</strong>Make the problem and proposition legible.</div>
-        <div><strong>Consider</strong>Offer evidence-led depth for decision criteria.</div>
-        <div><strong>Review</strong>Enable internal review of message fit.</div>
-        <div><strong>CTA</strong>Invite a discovery conversation.</div>
+      <div class="mini-grid" aria-label="Brief essentials">
+        <div><strong>Market</strong>Nigeria</div>
+        <div><strong>Message</strong>Creative execution, amplified by technology and AI</div>
+        <div><strong>Audience</strong>Decision-makers needing a modern partner</div>
+        <div><strong>CTA</strong>Request a discovery conversation</div>
       </div>
-    </article>
-  </section>
-
-  <section class="section" id="communicate">
-    <div class="stage">05 · Communicate</div>
-    <h2>Prepare an internal review, not an external send</h2>
-    <p class="intro">Use the existing NUGES review channel, such as WhatsApp, email, Google Chat, Slack or Teams. This page does not send anything.</p>
-    <div class="grid-2">
-      <article class="panel">
-        <div class="draft-banner">DRAFT: NOT SENT</div>
-        <h3>Internal review draft</h3>
-        <p><strong>Request:</strong> Review the evidence trail, proposition fit, central message, big idea, channel roles and CTA. Flag missing proof and approval gaps.</p>
-        <p><strong>Decision criteria:</strong> traceable, consistent, role-owned, safe to advance for internal revision.</p>
-        <p><span class="state hold">Not sent</span> Copy into the established channel only when the strategy lead decides to request review.</p>
-      </article>
-      <article class="panel">
-        <h3>Feedback log</h3>
-        <ol class="review-log">
-          <li><strong>Reviewer role:</strong> [ROLE] · <strong>Feedback:</strong> [COMMENT] · <strong>Decision:</strong> Accepted / Rejected / Revise</li>
-          <li><strong>Confirmation gap:</strong> [NUGES TO CONFIRM] · <strong>Owner role:</strong> [ROLE] · <strong>Next action:</strong> [ACTION]</li>
-        </ol>
-      </article>
+      <p class="caption">Central message stays fixed. Big idea and proof must still earn their place.</p>
     </div>
   </section>
 
-  <section class="section" id="operate">
-    <div class="stage">06 · Operate</div>
-    <h2>Turn the brief into an execution starter pack</h2>
-    <p class="intro">Keep this persistent execution table inside the same shared Google Doc or strategy document. It changes durable work state. It does not activate an external campaign and does not require a new project-management tool.</p>
-    <article class="panel" id="execution-table">
-      <div class="table-wrap">
-        <table class="work-table">
-          <thead><tr><th>Workstream</th><th>Deliverable</th><th>Owner role</th><th>Dependency</th><th>Review point</th><th>Approval required</th><th>Next action</th></tr></thead>
-          <tbody>
-            <tr><td>Strategy</td><td>Validated campaign brief</td><td>Strategy lead</td><td>Approved context</td><td>Evidence traceability</td><td>Context owner</td><td>Resolve [NUGES TO CONFIRM] items.</td></tr>
-            <tr><td>Creative</td><td>Big-idea exploration</td><td>Creative lead</td><td>Approved brief</td><td>Message and tone fit</td><td>Strategy lead</td><td>Prepare internal options only.</td></tr>
-            <tr><td>Channel</td><td>Channel cascade plan</td><td>Strategy lead</td><td>Validated audience hypothesis</td><td>Role clarity</td><td>Designated external-release approver</td><td>Hold external activation.</td></tr>
-            <tr><td>Control</td><td>Validation register</td><td>Context owner</td><td>Review feedback</td><td>Permissions and gaps</td><td>Designated external-release approver</td><td>Document decision.</td></tr>
-          </tbody>
-        </table>
+  <!-- COMMUNICATE -->
+  <section class="block" id="communicate" aria-labelledby="comm-title">
+    <div class="block-head">
+      <div class="stage">04 · Communicate</div>
+      <h2 id="comm-title">Internal review only</h2>
+      <p class="one-liner">Existing NUGES channel. Draft message is not a sent message.</p>
+    </div>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/connections-feedback-boundary.png" width="1024" height="640" alt="Connections illustration representing internal review routes">
+      <div class="draft-banner">DRAFT: NOT SENT</div>
+      <div class="mini-grid">
+        <div><strong>Ask</strong>Review evidence trail and fit</div>
+        <div><strong>Check</strong>Traceable and consistent</div>
+        <div><strong>Flag</strong>Missing proof and owners</div>
+        <div><strong>Stop</strong>No external publish</div>
       </div>
-    </article>
+      <p class="caption">Copy into WhatsApp, email or chat only when the strategy lead requests review.</p>
+    </div>
   </section>
 
-  <section class="section" id="controls">
-    <div class="stage">07 · Final synthesis</div>
-    <h2>Validation, permissions and approval</h2>
-    <p class="intro">Apply these controls across the full Class 2 journey and ordinary day-to-day tools. Classroom outputs remain drafts and internal work only.</p>
-    <div class="grid-3">
-      <article class="panel">
-        <h3>Validation</h3>
-        <p>Is each claim traceable to approved NUGES context, approved public material or <strong>[NUGES TO CONFIRM]</strong>? Are audience insight, pain point, proposition, big idea, channel role and CTA consistent? Hold unsupported proof, invented audience assertions and unverified competitor comparisons.</p>
-      </article>
-      <article class="panel">
-        <h3>Permissions</h3>
-        <p>Assign who can view, edit, comment on and approve the knowledge base, strategy document, review draft and execution table. Identify material restricted from broad sharing. Access is not approval for external action.</p>
-      </article>
-      <article class="panel">
-        <h3>Approval roles</h3>
-        <p>Context owner · Strategy lead · Creative lead · Designated external-release approver. Assign the actual people during the build. No work moves to external action without documented designated approval.</p>
-      </article>
+  <!-- OPERATE -->
+  <section class="block" id="operate" aria-labelledby="operate-title">
+    <div class="block-head">
+      <div class="stage">05 · Operate</div>
+      <h2 id="operate-title">Make the work executable</h2>
+      <p class="one-liner">Execution starter pack lives in the same strategy document. No new paid tool.</p>
     </div>
-    <article class="panel" style="margin-top:18px">
-      <h3>One-page validation, permissions and approval register</h3>
-      <div class="table-wrap">
-        <table class="work-table">
-          <thead><tr><th>Control item</th><th>Evidence / state</th><th>Role owner</th><th>Decision</th><th>Next action</th></tr></thead>
-          <tbody>
-            <tr><td>Context and claims</td><td>[LINK APPROVED SOURCE OR PUBLIC EVIDENCE]</td><td>Context owner</td><td>Approved / <span class="state revise">Revise</span></td><td>Attach or correct source.</td></tr>
-            <tr><td>Strategy coherence</td><td>[SIGNAL TO CTA TRACE]</td><td>Strategy lead</td><td>Approved / <span class="state hold">Hold</span></td><td>Resolve inconsistency.</td></tr>
-            <tr><td>Creative direction</td><td>[INTERNAL REVIEW NOTES]</td><td>Creative lead</td><td>Approved / <span class="state revise">Revise</span></td><td>Update draft options.</td></tr>
-            <tr><td>External release</td><td>[DOCUMENTED APPROVAL REQUIRED]</td><td>Designated external-release approver</td><td><span class="state hold">Hold</span></td><td>No release until approval is recorded.</td></tr>
-          </tbody>
-        </table>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/feedback-loop.png" width="1024" height="640" alt="Feedback loop illustration representing executable work cycles">
+      <div class="board-shell" id="execution-table">
+        <div class="table-wrap">
+          <table class="work-table">
+            <thead><tr><th>Workstream</th><th>Deliverable</th><th>Owner role</th><th>Approval</th><th>Next action</th></tr></thead>
+            <tbody>
+              <tr><td>Strategy</td><td>Validated brief</td><td>Strategy lead</td><td>Context owner</td><td>Resolve confirmations</td></tr>
+              <tr><td>Creative</td><td>Big-idea options</td><td>Creative lead</td><td>Strategy lead</td><td>Internal drafts only</td></tr>
+              <tr><td>Channel</td><td>Cascade plan</td><td>Strategy lead</td><td>External-release approver</td><td>Hold activation</td></tr>
+              <tr><td>Control</td><td>Register</td><td>Context owner</td><td>External-release approver</td><td>Document decision</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </article>
+      <p class="caption">This updates planning state. It does not launch ads, spend or outreach.</p>
+    </div>
   </section>
 
-  <section class="section" id="assessment">
-    <div class="stage">08 · Assessment and end</div>
-    <h2>Shared team output: the validated campaign package</h2>
-    <p class="intro">Submit the validated NUGES campaign brief, execution starter pack and control register. The package stays internal and does not trigger external outreach, publishing, ads, spend or activation.</p>
-    <div class="assessment-grid">
-      <div><strong>Traceability</strong>Market evidence and approved context connect to insight, proposition, big idea and channel cascade.</div>
-      <div><strong>Ownership</strong>Named owner roles, dependencies and approval checkpoints are present.</div>
-      <div><strong>Control</strong>Every unresolved item has a status, role owner and next action.</div>
-      <div><strong>Boundary</strong>No external action was triggered from the classroom output.</div>
+  <!-- CONTROLS -->
+  <section class="block" id="controls" aria-labelledby="controls-title">
+    <div class="block-head">
+      <div class="stage">06 · Controls</div>
+      <h2 id="controls-title">Validate. Permission. Approve.</h2>
+      <p class="one-liner">Final gate after the five capability moves. Nothing external without a designated role.</p>
     </div>
-    <div class="close-box">
-      <strong>Campaign artifact package</strong>
-      <p>Validated brief · execution starter pack · validation, permissions and approval register · unresolved items, owners and next actions.</p>
+    <div class="visual-stage">
+      <img class="landscape" src="assets/generated/biological-boundary.png" width="1024" height="640" alt="Boundary illustration representing validation permissions and approval">
+      <svg viewBox="0 0 980 220" width="980" height="220" role="img" aria-label="Validation permissions approval gates">
+        <rect x="40" y="50" width="200" height="100" rx="18" fill="#e8f7ef" stroke="#01C676" stroke-width="4"/>
+        <text x="140" y="110" text-anchor="middle" font-size="24" font-weight="800" fill="#0b6b3a">Validate</text>
+        <path d="M240 100 H320" stroke="#0750D0" stroke-width="6" marker-end="url(#arr5)"/>
+        <rect x="320" y="50" width="200" height="100" rx="18" fill="#e8eefc" stroke="#0750D0" stroke-width="4"/>
+        <text x="420" y="110" text-anchor="middle" font-size="24" font-weight="800" fill="#1140a0">Permission</text>
+        <path d="M520 100 H600" stroke="#0750D0" stroke-width="6" marker-end="url(#arr5)"/>
+        <rect x="600" y="50" width="200" height="100" rx="18" fill="#fff" stroke="#333" stroke-width="4"/>
+        <text x="700" y="110" text-anchor="middle" font-size="24" font-weight="800" fill="#333">Approve</text>
+        <rect x="830" y="65" width="110" height="70" rx="14" fill="#eee" stroke="#cfcfcf" stroke-width="3"/>
+        <text x="885" y="108" text-anchor="middle" font-size="20" font-weight="800" fill="#555">Hold</text>
+        <defs><marker id="arr5" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#0750D0"/></marker></defs>
+      </svg>
+      <div class="mini-grid">
+        <div><strong>Context owner</strong>Proof and claims</div>
+        <div><strong>Strategy lead</strong>Direction and fit</div>
+        <div><strong>Creative lead</strong>Idea and tone</div>
+        <div><strong>Release approver</strong>Any external move</div>
+      </div>
+      <p class="caption">Roles first. Names assigned in the room. Hold, revise or confirm until the path is clean.</p>
     </div>
-    <div class="footer-nav">
-      <a class="secondary" href="index.html">Return to Class 1</a>
-      <a class="action" href="#flightpath">Replay the workflow</a>
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section class="block" id="assessment" aria-labelledby="end-title">
+    <div class="block-head">
+      <div class="stage">End</div>
+      <h2 id="end-title">One package leaves the room</h2>
+      <p class="one-liner">Validated brief. Execution starter pack. Control register. No external action.</p>
+    </div>
+    <div class="visual-stage">
+      <div class="close-box">
+        <strong style="font-size:24px;display:block">Campaign artifact package</strong>
+        <p>Brief · starter pack · validation register · unresolved items with owners and next actions</p>
+      </div>
+      <div class="mini-grid">
+        <div><strong>Trace</strong>Signal to CTA</div>
+        <div><strong>Own</strong>Role and dependency</div>
+        <div><strong>Control</strong>Hold / revise / confirm</div>
+        <div><strong>Boundary</strong>No external launch</div>
+      </div>
+      <div class="footer-nav">
+        <a class="secondary" href="index.html">Back to Class 1</a>
+        <a class="action" href="#flightpath">Replay the path</a>
+      </div>
     </div>
   </section>
 </main>
@@ -477,131 +388,98 @@ h1{font-size:40px}
 <script>
 (function(){
 'use strict';
-var root=document.documentElement,theme=document.getElementById('theme');
+var root=document.documentElement, theme=document.getElementById('theme');
 function setTheme(t){root.dataset.theme=t;theme.textContent=t==='dark'?'Light mode':'Dark mode';try{localStorage.setItem('nuges-theme',t)}catch(e){}}
 var saved;try{saved=localStorage.getItem('nuges-theme')}catch(e){}
 setTheme(saved==='dark'?'dark':'light');
 theme.onclick=function(){setTheme(root.dataset.theme==='dark'?'light':'dark')};
 
 var flight=[
-  ['01','Market signals','Collect dated public evidence before strategy claims.'],
-  ['02','Audience psychographics','Define decision-maker situation, motives, anxieties and channels.'],
-  ['03','NUGES proposition','Retrieve only approved organizational context.'],
-  ['04','Pain-point fit','Map audience needs to verified NUGES capability.'],
-  ['05','Big idea','Write one central idea that can cascade across channels.'],
-  ['06','Channel cascade','Assign a clear role to each channel expression.'],
-  ['07','Team alignment','Route an internal review draft, not a public send.'],
-  ['08','Execution starter pack','Turn the brief into owned next actions inside the strategy document.'],
-  ['09','Validation & approval','Apply validation, permissions and approval across the whole package.']
+  ['Market signals','Collect dated public evidence before any strategy claim.'],
+  ['Audience','Sketch decision-maker motives, anxieties and channels.'],
+  ['NUGES proposition','Retrieve only approved organizational context.'],
+  ['Pain-point fit','Join audience need to verified capability.'],
+  ['Big idea','Write one idea strong enough to cascade.'],
+  ['Channel cascade','Give each channel a job, not a decoration.'],
+  ['Team alignment','Route an internal review draft only.'],
+  ['Execution pack','Assign owners, dependencies and checkpoints.'],
+  ['Validation','Validate, permission, approve. Hold the rest.']
 ];
-var flightTabs=document.getElementById('flight-tabs');
-var flightPanel=document.getElementById('flight-panel');
-var flightIndex=0;
-function renderFlight(i){
-  flightIndex=i;
-  Array.prototype.forEach.call(flightTabs.children,function(btn,k){
-    btn.setAttribute('aria-selected', String(k===i));
-    btn.tabIndex=k===i?0:-1;
+var tabs=document.getElementById('flight-tabs');
+var note=document.getElementById('flight-note');
+var nodes=document.getElementById('flight-nodes');
+var fi=0;
+function drawFlight(i){
+  fi=i;
+  nodes.innerHTML='';
+  flight.forEach(function(item,k){
+    var x=55+k*110;
+    var on=k===i;
+    var c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',x);c.setAttribute('cy','170');c.setAttribute('r', on?18:14);
+    c.setAttribute('fill', on?'#01C676':'#0750D0');
+    nodes.appendChild(c);
+    var t=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x',x);t.setAttribute('y', on?120:130);t.setAttribute('text-anchor','middle');
+    t.setAttribute('font-size', on?'16':'13');t.setAttribute('font-weight','800');
+    t.setAttribute('fill', on?'#0b6b3a':'#333');
+    t.textContent=item[0].split(' ')[0];
+    nodes.appendChild(t);
   });
-  var item=flight[i];
-  flightPanel.innerHTML='<div class="stage">Stage '+item[0]+'</div><h3 style="margin:8px 0 10px">'+item[1]+'</h3><p>'+item[2]+'</p>';
+  Array.prototype.forEach.call(tabs.children,function(b,k){b.setAttribute('aria-selected',String(k===i));b.tabIndex=k===i?0:-1});
+  note.textContent=flight[i][0]+': '+flight[i][1];
 }
 flight.forEach(function(item,i){
   var b=document.createElement('button');
-  b.type='button';b.className='flight-step';b.setAttribute('role','tab');
-  b.innerHTML='<strong>'+item[0]+'</strong><span>'+item[1]+'</span>';
-  b.onclick=function(){renderFlight(i)};
-  flightTabs.appendChild(b);
+  b.type='button';b.setAttribute('role','tab');b.textContent=(i+1)+'. '+item[0];
+  b.onclick=function(){drawFlight(i)};
+  tabs.appendChild(b);
 });
-flightTabs.addEventListener('keydown',function(e){
-  var next=flightIndex;
-  if(e.key==='ArrowRight')next=(flightIndex+1)%flight.length;
-  else if(e.key==='ArrowLeft')next=(flightIndex+flight.length-1)%flight.length;
-  else if(e.key==='Home')next=0;
-  else if(e.key==='End')next=flight.length-1;
-  else return;
-  e.preventDefault();renderFlight(next);flightTabs.children[next].focus();
+tabs.addEventListener('keydown',function(e){
+  var n=fi;
+  if(e.key==='ArrowRight')n=(fi+1)%flight.length;
+  else if(e.key==='ArrowLeft')n=(fi+flight.length-1)%flight.length;
+  else if(e.key==='Home')n=0; else if(e.key==='End')n=flight.length-1; else return;
+  e.preventDefault();drawFlight(n);tabs.children[n].focus();
 });
-renderFlight(0);
+drawFlight(0);
 
 var caps=[
-  {
-    id:'observe',
-    name:'Observe',
-    move:'Research market, competitors, category language and channels before writing the brief.',
-    tool:'Chrome or the team browser with public sources such as Google Trends, Meta Ad Library, company sites and public campaign examples.',
-    artifact:'Shared signal board with source, date, observed signal, interpretation and evidence or hypothesis status.',
-    prompt:'What five signals would change the strategy if they were wrong?'
-  },
-  {
-    id:'retrieve',
-    name:'Retrieve',
-    move:'Ground NUGES positioning in approved organizational knowledge only.',
-    tool:'Existing NUGES knowledge base in Obsidian or the team-selected equivalent.',
-    artifact:'Approved-context panel mapping capability, source, audience relevance and missing proof.',
-    prompt:'Which claim still needs a source owner before it can leave the room?'
-  },
-  {
-    id:'create',
-    name:'Create',
-    move:'Turn evidence into a draft campaign brief, big idea and channel cascade.',
-    tool:'Shared Google Doc or the strategy document tool NUGES already uses.',
-    artifact:'Draft campaign brief marked as draft, not approved work.',
-    prompt:'Can the big idea cascade into channels without inventing proof?'
-  },
-  {
-    id:'communicate',
-    name:'Communicate',
-    move:'Route the strategy through internal review without external publication.',
-    tool:'Existing NUGES review channel such as WhatsApp, email, Google Chat, Slack or Teams.',
-    artifact:'Internal review draft labeled DRAFT: NOT SENT, plus feedback log.',
-    prompt:'Who must review before this becomes more than a draft?'
-  },
-  {
-    id:'operate',
-    name:'Operate',
-    move:'Convert the approved direction into owned workstreams, dependencies and checkpoints.',
-    tool:'Execution starter pack table inside the same strategy document. No new paid project tool.',
-    artifact:'Workstream table with owner roles, review points and approval gates.',
-    prompt:'Which next action is blocked until an approval role decides?'
-  }
+  {name:'Observe', img:'assets/generated/senses.png', alt:'Senses illustration for observation', line:'Browser and public sources. Build a dated signal board before strategy.', caption:'Observation opens the system to the market without inventing internal truth.'},
+  {name:'Retrieve', img:'assets/generated/heart.png', alt:'Circulation illustration for retrieval', line:'Existing NUGES knowledge base only. Approved context feeds the proposition.', caption:'Context has to circulate from a trusted source, not from memory theater.'},
+  {name:'Create', img:'assets/generated/hand.png', alt:'Hands illustration for creation', line:'Shared Google Doc. Draft brief, big idea and channel cascade.', caption:'Creation is drafting with tools, still short of approval.'},
+  {name:'Communicate', img:'assets/generated/connections-feedback-boundary.png', alt:'Connections illustration for communication', line:'Existing review channel. Label every draft as not sent.', caption:'Connection enables review. It does not authorize publication.'},
+  {name:'Operate', img:'assets/generated/feedback-loop.png', alt:'Loop illustration for operations', line:'Execution table in the same document. Owners, dependencies, gates.', caption:'Operation changes work state. It still stops before external action.'}
 ];
 var capTabs=document.getElementById('cap-tabs');
-var capMain=document.getElementById('cap-main');
-var capSide=document.getElementById('cap-side');
-var capIndex=0;
+var capCopy=document.getElementById('cap-copy');
+var capImage=document.getElementById('cap-image');
+var capCaption=document.getElementById('cap-caption');
+var ci=0;
 function renderCap(i){
-  capIndex=i;
-  Array.prototype.forEach.call(capTabs.children,function(btn,k){
-    btn.setAttribute('aria-selected', String(k===i));
-    btn.tabIndex=k===i?0:-1;
-  });
-  var c=caps[i];
-  capMain.innerHTML='<div class="label">Agency move</div><h3>'+c.name+'</h3><p style="font-size:18px;margin-bottom:16px">'+c.move+'</p><div class="label">Learner prompt</div><p style="font-size:20px;font-weight:800;margin:0">'+c.prompt+'</p>';
-  capSide.innerHTML='<div><strong>Case study tool</strong>'+c.tool+'</div><div><strong>Shared artifact</strong>'+c.artifact+'</div><div><strong>Boundary</strong>Drafts and internal planning only. No external send, publish, spend or activation from class.</div>';
+  ci=i; var c=caps[i];
+  Array.prototype.forEach.call(capTabs.children,function(b,k){b.setAttribute('aria-selected',String(k===i));b.tabIndex=k===i?0:-1});
+  capCopy.innerHTML='<p><strong>'+c.name+':</strong> '+c.line+'</p>';
+  capImage.src=c.img; capImage.alt=c.alt; capCaption.textContent=c.caption;
 }
 caps.forEach(function(c,i){
-  var b=document.createElement('button');
-  b.type='button';b.setAttribute('role','tab');b.textContent=c.name;
-  b.onclick=function(){renderCap(i)};
-  capTabs.appendChild(b);
+  var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.textContent=c.name;
+  b.onclick=function(){renderCap(i)}; capTabs.appendChild(b);
 });
 capTabs.addEventListener('keydown',function(e){
-  var next=capIndex;
-  if(e.key==='ArrowRight')next=(capIndex+1)%caps.length;
-  else if(e.key==='ArrowLeft')next=(capIndex+caps.length-1)%caps.length;
-  else if(e.key==='Home')next=0;
-  else if(e.key==='End')next=caps.length-1;
-  else return;
-  e.preventDefault();renderCap(next);capTabs.children[next].focus();
+  var n=ci;
+  if(e.key==='ArrowRight')n=(ci+1)%caps.length;
+  else if(e.key==='ArrowLeft')n=(ci+caps.length-1)%caps.length;
+  else if(e.key==='Home')n=0; else if(e.key==='End')n=caps.length-1; else return;
+  e.preventDefault();renderCap(n);capTabs.children[n].focus();
 });
 renderCap(0);
 
 document.querySelectorAll('.signal-status').forEach(function(b){
   b.onclick=function(){
-    var checked=b.classList.toggle('checked');
-    b.setAttribute('aria-pressed', String(checked));
-    b.textContent=checked?'Evidence checked':'Hypothesis';
+    var on=b.classList.toggle('checked');
+    b.setAttribute('aria-pressed',String(on));
+    b.textContent=on?'Evidence checked':'Hypothesis';
   };
 });
 })();
